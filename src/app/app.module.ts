@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const MODULES  = [SharedModule]
 @NgModule({
@@ -14,7 +15,8 @@ const MODULES  = [SharedModule]
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ...MODULES
+    ...MODULES,
+    HttpClientModule
 
   ],
   providers: [],
