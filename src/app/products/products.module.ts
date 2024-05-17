@@ -5,6 +5,8 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './page';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 const BASE_MODULES = [HttpClientModule ,CommonModule,
   ProductsRoutingModule,]
 @NgModule({
@@ -13,7 +15,8 @@ const BASE_MODULES = [HttpClientModule ,CommonModule,
     ProductDetailsComponent
   ],
   imports: [
-
+    CardModule,
+    ButtonModule,
     ...BASE_MODULES
   ]
 })

@@ -1,4 +1,5 @@
 export enum MainAppPath{
   HOME= 'home',
-  PRODUCTS = 'products'
+  PRODUCTS = 'products',
+  ORDERS='orders'
 }

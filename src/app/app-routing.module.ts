@@ -17,6 +17,11 @@ const routes: Routes = [
         path: MainAppPath.PRODUCTS,
         loadChildren:()=>
           import('./products/products.module').then((m)=>m.ProductsModule)
+      },
+      {
+        path: MainAppPath.ORDERS,
+        loadChildren:()=>
+          import('./orders/orders.module').then((m)=>m.OrdersModule)
       }
     ],
   },
