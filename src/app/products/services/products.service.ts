@@ -15,4 +15,8 @@ export class ProductsService {
   getProducts():Observable<IProduct[]>{
     return this._http.get<IProduct[]>(this.PRODUCT_APIS.getProducts).pipe(take(1))
   }
+
+  editProductQuantity(productId: number, quantity: number): Observable<any> {
+    return this._http.put<any>(`${this.PRODUCT_APIS.getProducts}/${productId}`, { AvailablePieces: quantity });
+  }
 }

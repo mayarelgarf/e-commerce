@@ -1,12 +1,12 @@
 export const API_URLS={
   products:{
-    getProducts:'assets/data/porducts.json'
+    getProducts:'http://localhost:3000/products'
   },
   orders:{
-    getOrders:'assets/data/orders.json'
+    getOrders:'http://localhost:3000/orders'
   },
   users:{
-    getUsers:'assets/data/users.json'
+    getUsers:'http://localhost:3000/users'
   }
 
 }

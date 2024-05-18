@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../interfaces';
 
 @Component({
@@ -9,6 +9,10 @@ import { IProduct } from '../../interfaces';
 export class ProductDetailsComponent {
   @Input()
   product: IProduct;
-
+@Output() onEditProduct= new EventEmitter<IProduct>()
   constructor(){}
+  onClickEdit(event:IProduct){
+
+    this.onEditProduct.emit(event)
+  }
 }

@@ -10,7 +10,9 @@ import { IProduct } from '../interfaces';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
   private _destroy$ = new Subject<void>();
+  isEditing:boolean
   productList: IProduct[] = [];
+  selectedProduct:IProduct
   constructor(private _productService: ProductsService) {}
   ngOnInit(): void {
     this.getProducts();
@@ -30,6 +32,15 @@ export class ProductsComponent implements OnInit, OnDestroy {
         },
         error: (err: Error) => console.error(err),
       });
+  }
+
+  onEditQuantity(event:any){
+this.selectedProduct=event
+    this.isEditing = true
+  }
+  onSaveQuantity(){
+this._productService.editProductQuantity(this.selectedProduct.ProductId,100).pipe(takeUntil(this._destroy$))
+.subscribe((data)=>console.log(data))
   }
   ngOnDestroy(): void {
     this._destroy$.next();

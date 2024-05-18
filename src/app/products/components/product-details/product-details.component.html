@@ -13,7 +13,7 @@
     <ng-template pTemplate="footer">
         <div class="product-card-wrapper__buttons-container">
 
-            <p-button [outlined]="true" label="Edit" class="w-full" styleClass="w-full" />
+            <p-button (click)="onClickEdit(product)"  [outlined]="true" label="Edit" class="w-full" styleClass="w-full" />
         </div>
     </ng-template>
   </p-card>
