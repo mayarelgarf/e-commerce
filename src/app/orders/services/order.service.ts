@@ -82,6 +82,6 @@ getUsers(): Observable<IUser[]>{
   return this._http.get<IUser[]>(this.USERS_APIS.getUsers).pipe(take(1));
 }
   getUserById(userId:string): Observable<IUser> {
-    return this._http.get<IUser>(`${this.USERS_APIS.getUsers}/${userId}`).pipe(take(1));
+    return this._http.get<IUser>(`${this.USERS_APIS.getUsers}?UserId=${userId}`).pipe(take(1));
   }
 }

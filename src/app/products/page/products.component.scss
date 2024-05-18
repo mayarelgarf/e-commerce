@@ -9,5 +9,11 @@
     align-items: center;
     gap: 2rem;
   }
+  &__button-wrapper{
+    margin-top: 2rem;
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+  }
 
 }
