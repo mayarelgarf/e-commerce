@@ -1,0 +1,17 @@
+
+.product-card-wrapper{
+  text-align: center;
+
+  &__product-card{
+    width:15rem !important;
+    height: 10rem;
+
+  }
+
+  &__buttons-container{
+    display: flex;
+    justify-content: center;
+
+  }
+}
+

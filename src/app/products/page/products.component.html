@@ -1,6 +1,12 @@
 
-<ng-container *ngFor="let item of productList">
+<section class="products-page-container">
+  <h1>Featured Products</h1>
+<div class="products-page-container__products-container">
 
+  <ng-container *ngFor="let item of productList">
   <app-product-details [product]="item"></app-product-details>
-</ng-container>
+  </ng-container>
+</div>
+</section>
+
 

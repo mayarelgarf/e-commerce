@@ -1,18 +1,21 @@
 
-<p-card header="Advanced Card" subheader="price : {{product.ProductPrice}}" [style]="{ width: '360px' }">
-  <ng-template pTemplate="header">
-      <img alt="{{product.ProductName}}" src="{{product.ProductImg}}" />
-  </ng-template>
-  <h3>
-    {{product.ProductName}}
-  </h3>
-  <p>
-   Available pieces: {{product.AvailablePieces}}
-  </p>
-  <ng-template pTemplate="footer">
-      <div class="flex gap-3 mt-1">
-          <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
-          <p-button label="Save" class="w-full" styleClass="w-full" />
-      </div>
-  </ng-template>
-</p-card>
+<section class="product-card-wrapper">
+  <p-card  subheader="price : {{product.ProductPrice}}" class="product-card-wrapper__product-card" [style]="{ width: '15rem'}">
+    <ng-template pTemplate="header">
+        <img alt="{{product.ProductName}}" src="{{product.ProductImg}}" />
+    </ng-template>
+    <h3>
+      {{product.ProductName}}
+    </h3>
+    <p>
+     Available pieces: {{product.AvailablePieces}}
+    </p>
+    <ng-template pTemplate="footer">
+        <div class="product-card-wrapper__buttons-container">
+
+            <p-button [outlined]="true" label="Edit" class="w-full" styleClass="w-full" />
+        </div>
+    </ng-template>
+  </p-card>
+</section>
+
