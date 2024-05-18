@@ -1,1 +1,35 @@
-<p>orders works!</p>
+<section class="orders-container">
+  <h1>Available Orders</h1>
+  <p-table
+      [value]="orders"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width:25%">Order date</th>
+              <th style="width:25%">total price</th>
+              <th style="width:25%">Payment Type</th>
+              <th style="width:25%">Action</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-orders>
+          <tr>
+              <td>{{ orders.OrderDate }}</td>
+              <td>total price</td>
+              <td>{{ orders.PaymentType }}</td>
+              <td><button
+                type="button"
+                pButton
+                pRipple
+
+                label="view"
+                (click)="selectOrder(orders)">
+            </button></td>
+          </tr>
+      </ng-template>
+  </p-table>
+</section>
+

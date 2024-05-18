@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { OrderService } from '../services';
 import { IOrder } from '../interfaces';
-
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -31,5 +30,8 @@ export class OrdersComponent implements OnInit {
         },
         error: (err: Error) => console.error(err),
       });
+  }
+  selectOrder(order:any){
+    console.log(order)
   }
 }
