@@ -16,7 +16,7 @@
 
                 <td>{{ products.OrderDate|date }}</td>
                 <td>{{ products.PaymentType }}</td>
-                <td>{{ products.TotalPrice }}</td>
+                <td>{{ products.TotalPrice | currency}}</td>
             </tr>
         </ng-template>
       </p-table>
@@ -39,7 +39,7 @@
                 <td>{{ products.ProductName }}</td>
                 <td>{{ products.Quantity }}</td>
                 <td style="width:30%">  <img alt="{{products.ProductName}}" src="{{products.ProductImg}}" /></td>
-                <td>{{ products.ProductPrice }}</td>
+                <td>{{ products.ProductPrice  | currency }}</td>
                 <td>{{products.Quantity *  products.ProductPrice |currency  }}</td>
             </tr>
         </ng-template>

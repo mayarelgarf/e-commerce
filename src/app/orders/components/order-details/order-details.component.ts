@@ -51,7 +51,6 @@ this.getUserById(order.UserId)
     .subscribe({
       next: (user: IUser) => {
         if (!user) return;
-        console.log('user',user)
         this.customer =[user]
 
       },
