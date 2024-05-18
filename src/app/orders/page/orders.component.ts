@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { OrderService } from '../services';
-import { IOrder } from '../interfaces';
+import { IOrderTable } from '../interfaces';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -9,7 +9,7 @@ import { IOrder } from '../interfaces';
 })
 export class OrdersComponent implements OnInit {
   private _destroy$ = new Subject<void>();
-  orders: IOrder[];
+  orders: IOrderTable[];
   constructor(private _orderService: OrderService) {}
   ngOnInit(): void {
     this.getOrders()
@@ -20,12 +20,11 @@ export class OrdersComponent implements OnInit {
    */
   getOrders(): void {
     this._orderService
-      .getOrders()
+      .getOrdersWithTotalPrice()
       .pipe(takeUntil(this._destroy$))
       .subscribe({
-        next: (orders: IOrder[]) => {
+        next: (orders: IOrderTable[]) => {
           if (!orders) return;
-          console.log(orders);
           this.orders = orders;
         },
         error: (err: Error) => console.error(err),

@@ -9,3 +9,6 @@ export interface IOrder{
 export interface IProductOrder{
   ProductId: number, Quantity: number
 }
+export interface IOrderTable extends IOrder{
+TotalPrice:number
+}

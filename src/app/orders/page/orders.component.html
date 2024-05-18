@@ -19,7 +19,7 @@
       <ng-template pTemplate="body" let-orders>
           <tr>
               <td>{{ orders.OrderDate }}</td>
-              <td>total price</td>
+              <td>{{ orders.TotalPrice |currency}}</td>
               <td>{{ orders.PaymentType }}</td>
               <td><button
                 type="button"
