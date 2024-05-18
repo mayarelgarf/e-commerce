@@ -7,6 +7,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import {HttpClientModule} from '@angular/common/http';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+
 const BASE_MODULES = [HttpClientModule ,CommonModule,
   ProductsRoutingModule,]
 @NgModule({

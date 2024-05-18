@@ -1,0 +1,88 @@
+<section class="order-details-page-wrapper">
+  <div>
+    <section class="order-details-page-wrapper__order-details-container">
+      <h3>Order Details</h3>
+      <p-table [value]="order" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>order date</th>
+                <th>payment Type</th>
+                <th>Total Price</th>
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-products>
+            <tr>
+
+                <td>{{ products.OrderDate|date }}</td>
+                <td>{{ products.PaymentType }}</td>
+                <td>{{ products.TotalPrice }}</td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </section>
+    <section class="order-details-page-wrapper__products-details-container">
+      <h3>Product Details</h3>
+      <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>product name</th>
+                <th>quantity</th>
+                <th>image</th>
+                <th>product price</th>
+                <th>total</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-products>
+            <tr>
+
+                <td>{{ products.ProductName }}</td>
+                <td>{{ products.Quantity }}</td>
+                <td style="width:30%">  <img alt="{{products.ProductName}}" src="{{products.ProductImg}}" /></td>
+                <td>{{ products.ProductPrice }}</td>
+                <td>{{products.Quantity *  products.ProductPrice |currency  }}</td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </section>
+  </div>
+
+  <section class="order-details-page-wrapper__customer-details-container">
+
+    <p-table [value]="customer" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th colspan="2">Customer Details</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+        <tr>
+          <td><strong>Name:</strong></td>
+          <td>{{ customer.Name }}</td>
+        </tr>
+        <tr>
+          <td><strong>Email:</strong></td>
+          <td>{{ customer.Email }}</td>
+        </tr>
+        <tr>
+          <td><strong>Phone:</strong></td>
+          <td>{{ customer.Phone }}</td>
+        </tr>
+        <tr>
+          <td><strong>Address:</strong></td>
+          <td>{{ customer.Address }}</td>
+        </tr>
+        <tr>
+          <td><strong>Registration Date:</strong></td>
+          <td>{{ customer.RegisterDate | date }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </section>
+</section>
+
+
+
+
+

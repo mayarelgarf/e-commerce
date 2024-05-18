@@ -4,6 +4,9 @@ export const API_URLS={
   },
   orders:{
     getOrders:'assets/data/orders.json'
+  },
+  users:{
+    getUsers:'assets/data/users.json'
   }
 
 }
