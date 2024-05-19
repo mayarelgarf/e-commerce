@@ -7,5 +7,12 @@
     justify-content: center;
 
   }
+  &__product-card{
+    &__stock-warning{
+      font-size: 14px;
+      color: #de7474;
+    }
+  }
+
 }
 
