@@ -18,7 +18,9 @@ export class OrderService {
     return this._http.get<IOrder[]>(this.ORDER_APIS.getOrders).pipe(take(1));
   }
 
-
+  addOrder(order:IOrder): Observable<IOrder[]> {
+    return this._http.post<IOrder[]>(this.ORDER_APIS.addOrder,{}).pipe(take(1));
+  }
   getProducts():Observable<IProduct[]>{
     return this._http.get<IProduct[]>(this.PRODUCT_APIS.getProducts).pipe(take(1))
   }
@@ -81,7 +83,7 @@ export class OrderService {
 getUsers(): Observable<IUser[]>{
   return this._http.get<IUser[]>(this.USERS_APIS.getUsers).pipe(take(1));
 }
-  getUserById(userId:string): Observable<IUser> {
-    return this._http.get<IUser>(`${this.USERS_APIS.getUsers}?UserId=${userId}`).pipe(take(1));
+  getUserById(userId:string): Observable<IUser[]> {
+    return this._http.get<IUser[]>(`${this.USERS_APIS.getUserById}${userId}`).pipe(take(1));
   }
 }

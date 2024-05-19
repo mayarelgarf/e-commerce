@@ -8,7 +8,8 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { DataViewModule } from 'primeng/dataview';
-const BASE_MODULES = [HttpClientModule, CommonModule,TableModule,ButtonModule,DataViewModule]
+import { DialogModule } from 'primeng/dialog';
+const BASE_MODULES = [HttpClientModule, CommonModule,TableModule,ButtonModule,DataViewModule,DialogModule]
 
 @NgModule({
   declarations: [

@@ -4,29 +4,25 @@ import { MainAppPath } from './shared/enums';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: MainAppPath.HOME },
   {
-    path: '',
-    component: AppComponent,
-    children: [
-      { path: '', pathMatch: 'full', redirectTo: MainAppPath.HOME },
-      {
-        path: MainAppPath.HOME,
-        loadChildren: () =>
-          import('./home/home.module').then((m) => m.HomeModule),
-      },{
-        path: MainAppPath.PRODUCTS,
-        loadChildren:()=>
-          import('./products/products.module').then((m)=>m.ProductsModule)
-      },
-      {
-        path: MainAppPath.ORDERS,
-        loadChildren:()=>
-          import('./orders/orders.module').then((m)=>m.OrdersModule)
-      }
-    ],
+    path: MainAppPath.HOME,
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomeModule),
   },
-  { path: '**', redirectTo: 'home' },
+  {
+    path: MainAppPath.PRODUCTS,
+    loadChildren: () =>
+      import('./products/products.module').then((m) => m.ProductsModule),
+  },
+  {
+    path: MainAppPath.ORDERS,
+    loadChildren: () =>
+      import('./orders/orders.module').then((m) => m.OrdersModule),
+  },
+  { path: '**', redirectTo: MainAppPath.HOME },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

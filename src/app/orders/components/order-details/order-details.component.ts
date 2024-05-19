@@ -16,7 +16,12 @@ export class OrderDetailsComponent implements OnInit,OnDestroy {
   customer:IUser[]
   products:IProductOrder[]
   order:IOrderTable[]
-  get orderId() {
+   /**
+   * @description getter for orderId
+
+   * @returns {number} orderId
+   */
+  get orderId():number {
     let orderId: number;
     this._activatedRoute.params
       .pipe(takeUntil(this._destroy$))
@@ -27,6 +32,11 @@ export class OrderDetailsComponent implements OnInit,OnDestroy {
   }
   constructor(private _orderService: OrderService,private _activatedRoute: ActivatedRoute) {}
   ngOnInit(): void {this.getOrderDetails()}
+    /**
+   * @description function that calls api to get the order details and calls the get user details function
+
+   * @returns void
+   */
   getOrderDetails():void{
 
     this._orderService
@@ -43,15 +53,20 @@ this.getUserById(order.UserId)
       error: (err: Error) => console.error(err),
     });
   }
-
-  getUserById(userId:string){
+ /**
+   * @description function that calls api to get the user details
+   * @param {string} userId
+   * @returns void
+   */
+  getUserById(userId:string):void{
     this._orderService
     .getUserById(userId)
     .pipe(takeUntil(this._destroy$))
     .subscribe({
-      next: (user: IUser) => {
+      next: (user: IUser[]) => {
         if (!user) return;
-        this.customer =[user]
+
+        this.customer =user
 
       },
       error: (err: Error) => console.error(err),

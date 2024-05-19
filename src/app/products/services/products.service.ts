@@ -17,6 +17,6 @@ export class ProductsService {
   }
 
   editProductQuantity(productId: number, quantity: number): Observable<any> {
-    return this._http.put<any>(`${this.PRODUCT_APIS.getProducts}?ProductId=${productId}`, { AvailablePieces: quantity });
+    return this._http.post<any>(`${this.PRODUCT_APIS.editProduct}/${productId}`, { AvailablePieces: quantity });
   }
 }
