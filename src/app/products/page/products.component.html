@@ -1,5 +1,6 @@
 
 <section class="products-page-container">
+  <p-toast />
   <h1>Featured Products</h1>
 <div class="products-page-container__products-container">
 
@@ -9,13 +10,16 @@
 </div>
 </section>
 <p-dialog header="Update Product quantity." [modal]="true" [(visible)]="isEditing" [style]="{ width: '25rem' }">
-  <div class="flex align-items-center gap-3 mb-5 dialog-form-container">
-      <label for="quantity" class="font-semibold w-6rem">Quantity</label>
-      <input pInputText id="quantity" class="flex-auto" autocomplete="off" />
-  </div>
-  <div class="flex justify-content-end gap-2 dialog-buttons-container">
-      <p-button label="Cancel" severity="secondary"  (click)="isEditing = false"  />
-      <p-button label="Save" (click)="onSaveQuantity()" />
-  </div>
+  <form [formGroup]="quantityForm" (ngSubmit)="onSaveQuantity()">
+    <div class="flex align-items-center gap-3 mb-5 dialog-form-container">
+        <label for="quantity" class="font-semibold w-6rem">Quantity</label>
+        <input type="number" pInputText id="quantity" formControlName="quantity" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="flex justify-content-end gap-2 dialog-buttons-container">
+        <p-button label="Cancel" severity="secondary" (click)="isEditing = false" />
+        <p-button label="Save" type="submit" [disabled]="quantityForm.invalid" />
+    </div>
+  </form>
 </p-dialog>
+
 

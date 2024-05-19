@@ -17,14 +17,11 @@ export class ProductsService {
       .pipe(take(1));
   }
 
-  editProductQuantity(productId: number, quantity: number): Observable<any> {
-    return this._http.patch<any>(`${this.PRODUCT_APIS.editProduct}${productId}`, {
-      ProductId: 123,
+  editProductQuantity(id: string, quantity: number): Observable<any> {
+    return this._http.patch<any>(`${this.PRODUCT_APIS.editProduct}/${id}`, {
+
       AvailablePieces: quantity,
-      ProductPrice: 123.5,
-      ProductImg:
-        'https://www.decolore.net/wp-content/uploads/2017/04/product-mock-up-set-2.jpg',
-      id: 'ed5d',
+
     });
   }
 }

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MenubarModule } from 'primeng/menubar';
 import { HeaderComponent } from './shared/components';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ HeaderComponent
     MenubarModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-
+SharedModule,
     HttpClientModule
 
   ],

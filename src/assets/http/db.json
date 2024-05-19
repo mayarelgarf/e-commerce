@@ -2088,7 +2088,7 @@
       "ProductId": 123,
       "ProductName": "Product 1",
       "ProductPrice": 123.5,
-      "AvailablePieces": 25,
+      "AvailablePieces": 22,
       "ProductImg": "https://www.decolore.net/wp-content/uploads/2017/04/product-mock-up-set-2.jpg",
       "id": "ed5d"
     },
@@ -2096,7 +2096,7 @@
       "ProductId": 124,
       "ProductName": "Product 2",
       "ProductPrice": 100,
-      "AvailablePieces": 100,
+      "AvailablePieces": 200,
       "ProductImg": "https://www.decolore.net/wp-content/uploads/2017/04/product-mock-up-set-2.jpg",
       "id": "1e94"
     },
