@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { OrderService } from '../../services';
+import { OrderService, UserService } from '../../services';
 import { IOrder, IOrderTable, IProductOrder } from '../../interfaces';
 import { IUser } from '../../interfaces/user.interface';
 
@@ -30,7 +30,7 @@ export class OrderDetailsComponent implements OnInit,OnDestroy {
       });
     return orderId;
   }
-  constructor(private _orderService: OrderService,private _activatedRoute: ActivatedRoute) {}
+  constructor(private _userService:UserService,private _orderService: OrderService,private _activatedRoute: ActivatedRoute) {}
   ngOnInit(): void {this.getOrderDetails()}
     /**
    * @description function that calls api to get the order details and calls the get user details function
@@ -59,7 +59,7 @@ this.getUserById(order.UserId)
    * @returns void
    */
   getUserById(userId:string):void{
-    this._orderService
+    this._userService
     .getUserById(userId)
     .pipe(takeUntil(this._destroy$))
     .subscribe({

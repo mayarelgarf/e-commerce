@@ -29,7 +29,12 @@ export class OrdersComponent implements OnInit,OnDestroy {
       .subscribe({
         next: (orders: IOrderTable[]) => {
           if (!orders) return;
-          this.orders = orders;
+
+
+          this.orders = orders.map(order => ({
+            ...order,
+            OrderDate: new Date(order.OrderDate).toLocaleString() ==='Invalid Date'? order.OrderDate :new Date(order.OrderDate).toLocaleString()
+          }));
         },
         error: (err: Error) => console.error(err),
       });

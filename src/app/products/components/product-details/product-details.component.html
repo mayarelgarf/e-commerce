@@ -1,24 +1,34 @@
-
 <section class="product-card-wrapper">
-  <p-card subheader="price : {{product.ProductPrice}}" class="product-card-wrapper__product-card" [style]="{ width: '15rem',height:'30rem'}">
+  <p-card
+    subheader="price : {{ product.ProductPrice }}"
+    class="product-card-wrapper__product-card"
+    [style]="{ width: '15rem', height: '30rem' }"
+  >
     <ng-template pTemplate="header">
-        <img alt="{{product.ProductName}}" src="{{product.ProductImg}}" />
+      <img alt="{{ product.ProductName }}" src="{{ product.ProductImg }}" />
     </ng-template>
     <h3>
-      {{product.ProductName}}
+      {{ product.ProductName }}
     </h3>
-    <ng-container *ngIf="product.AvailablePieces< 5">
-<span class="product-card-wrapper__product-card__stock-warning" [innerHTML]="product.AvailablePieces===0 ? 'OUT OF STOCK !':'LOW IN STOCK'"></span>
+    <ng-container *ngIf="product.AvailablePieces < 5">
+      <span
+        class="product-card-wrapper__product-card__stock-warning"
+        [innerHTML]="
+          product.AvailablePieces === 0 ? 'OUT OF STOCK !' : 'LOW IN STOCK'
+        "
+      ></span>
     </ng-container>
-    <p>
-     Available pieces: {{product.AvailablePieces}}
-    </p>
+    <p>Available pieces: {{ product.AvailablePieces }}</p>
     <ng-template pTemplate="footer">
-        <div class="product-card-wrapper__buttons-container">
-
-            <p-button (click)="onClickEdit(product)"  [outlined]="true" label="Edit" class="w-full" styleClass="w-full" />
-        </div>
+      <div class="product-card-wrapper__buttons-container">
+        <p-button
+          (click)="onClickEdit(product)"
+          [outlined]="true"
+          label="Edit"
+          class="w-full"
+          styleClass="w-full"
+        />
+      </div>
     </ng-template>
   </p-card>
 </section>
-

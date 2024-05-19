@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { CommonModule, DatePipe } from '@angular/common';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './page';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,16 +8,19 @@ import { ButtonModule } from 'primeng/button';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { DataViewModule } from 'primeng/dataview';
 import { DialogModule } from 'primeng/dialog';
-const BASE_MODULES = [HttpClientModule, CommonModule,TableModule,ButtonModule,DataViewModule,DialogModule]
+const BASE_MODULES = [
+  OrdersRoutingModule,
+  HttpClientModule,
+  CommonModule,
+  TableModule,
+  ButtonModule,
+  DataViewModule,
+  DialogModule,
+];
 
 @NgModule({
-  declarations: [
-    OrdersComponent,
-    OrderDetailsComponent
-  ],
-  imports: [
-   ...BASE_MODULES,
-    OrdersRoutingModule
-  ]
+  declarations: [OrdersComponent, OrderDetailsComponent],
+  imports: [...BASE_MODULES],
+  providers: [],
 })
-export class OrdersModule { }
+export class OrdersModule {}
